@@ -8,7 +8,7 @@ module Cairo
   end
 
   class Graph
-    VERSION = "0.0.1"
+    VERSION = "0.0.2"
 
     LINE_COLORS = [
       Cairo::Color.parse("#CCCCE6"),
