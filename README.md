@@ -26,7 +26,7 @@ Or install it yourself as:
 
 ## Usage
 
-See examples.
+See [examples/basic.rb](https://github.com/myokoym/cairo-graph/blob/master/examples/basic.rb).
 
 ## Authors
 
