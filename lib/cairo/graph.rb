@@ -148,7 +148,7 @@ module Cairo
       x1 = @width - (@margin_right * 0.85)
       x2 = @width - (@margin_right * 0.1)
       @names.each_with_index do |name, i|
-        context.set_source_color(@colors[i] || LINE_COLORS[i])
+        context.set_source_color(line_color(i))
         text = (@names[i] || (i + 1)).to_s
         y = (@margin_top * 0.7) + (font_size * i * 1.8)
         context.stroke do
@@ -197,7 +197,7 @@ module Cairo
 
     def draw_row(context, index)
       row = @rows[index]
-      context.set_source_color(@colors[index] || LINE_COLORS[index])
+      context.set_source_color(line_color(index))
       points = []
       row.each_with_index do |value, i|
         x = interval_x * i + @margin_left
@@ -285,6 +285,10 @@ module Cairo
       pattern.add_color_stop(0.0, @background_top_color)
       pattern.add_color_stop(1.0, @background_bottom_color)
       pattern
+    end
+
+    def line_color(index)
+      @colors[index] || LINE_COLORS[index]
     end
   end
 end
