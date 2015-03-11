@@ -17,10 +17,6 @@ module Cairo
       Cairo::Color.parse("#F9B351"),
       Cairo::Color.parse("#83BE41"),
       Cairo::Color.parse("#E2629C"),
-      Cairo::Color::RGB.new(rand, rand, rand),
-      Cairo::Color::RGB.new(rand, rand, rand),
-      Cairo::Color::RGB.new(rand, rand, rand),
-      Cairo::Color::RGB.new(rand, rand, rand),
     ]
 
     attr_reader :width
@@ -288,7 +284,7 @@ module Cairo
     end
 
     def line_color(index)
-      @colors[index] || LINE_COLORS[index]
+      @colors[index] || LINE_COLORS[index] || Cairo::Color::RGB.new(rand, rand, rand)
     end
   end
 end
