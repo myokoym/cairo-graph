@@ -284,7 +284,9 @@ module Cairo
     end
 
     def line_color(index)
-      @colors[index] || LINE_COLORS[index] || Cairo::Color::RGB.new(rand, rand, rand)
+      @colors[index] ||
+        LINE_COLORS[index] ||
+        Cairo::Color::RGB.new(rand, rand, rand)
     end
   end
 end
