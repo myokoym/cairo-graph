@@ -45,6 +45,8 @@ module Cairo
     attr_accessor :grid_max
     attr_accessor :grid_step
 
+    attr_accessor :font
+
     def initialize(options={})
       # TODO: validate options
 
@@ -82,6 +84,7 @@ module Cairo
     end
 
     def draw(context)
+      context.select_font_face(@font) if @font
       draw_background(context)
       draw_title(context)
       draw_grid(context)
